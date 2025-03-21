@@ -13,7 +13,7 @@
             CzyNiebezpieczny = czyNiebezpieczny; 
         }
 
-        public void PowiadomOiebezpieczenstwie(string wiadomosc)
+        public void PowiadomONiebezpieczenstwie(string wiadomosc)
         {
             Console.WriteLine($"Uwaga {wiadomosc} (Kontener: {NumerSeryjny})");
         }
@@ -25,7 +25,7 @@
             double dostepnaPojemnosc = CzyNiebezpieczny ? MaksymalnaLadownosc * 0.5 : MaksymalnaLadownosc * 0.9;
             if (MasaLadunku + masa > dostepnaPojemnosc)
             {   
-                PowiadomOiebezpieczenstwie("Próba przeładowania kontenera z niebezpiecznym ładunkiem");
+                PowiadomONiebezpieczenstwie("Próba przeładowania kontenera z niebezpiecznym ładunkiem");
                 throw new OverflowException("Przekroczono dopuszczalną ładowność dla kontenera tego typu");
             }
 
