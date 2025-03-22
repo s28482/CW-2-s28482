@@ -1,6 +1,6 @@
 namespace ConsoleApp1;
 
-internal class KontenerNaGaz : Kontener,IHazardNotifier
+public class KontenerNaGaz : Kontener,IHazardNotifier
 {
     public double Cisnienie { get; } //cisnienie  w atmosferach
 
@@ -8,6 +8,8 @@ internal class KontenerNaGaz : Kontener,IHazardNotifier
         : base(masaLadunku, 220, 1800, 280, "G")
     {
         MaksymalnaLadownosc = 10000;
+        if (masaLadunku > MaksymalnaLadownosc)
+            throw new OverfillException($"Przekroczono maksymalną ładowność kontenera gazowego ");
         Cisnienie = cisnienie;
     }
     

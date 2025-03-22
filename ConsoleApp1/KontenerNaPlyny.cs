@@ -1,7 +1,7 @@
 
 namespace ConsoleApp1;
 
-    internal class KontenerNaPlyny : Kontener,IHazardNotifier
+    public class KontenerNaPlyny : Kontener,IHazardNotifier
     {
         public bool CzyNiebezpieczny { get; }
         
@@ -11,6 +11,8 @@ namespace ConsoleApp1;
         {
             MaksymalnaLadownosc = 15000;
             CzyNiebezpieczny = czyNiebezpieczny; 
+            if (masaLadunku > MaksymalnaLadownosc)
+                throw new OverfillException("Przekroczono maksymalna ladownosc (Płyny)");
         }
 
         public void PowiadomONiebezpieczenstwie(string wiadomosc)

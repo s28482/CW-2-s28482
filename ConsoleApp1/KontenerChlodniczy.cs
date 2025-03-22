@@ -1,5 +1,5 @@
 namespace ConsoleApp1;
-internal class KontenerChlodniczy : Kontener
+public class KontenerChlodniczy : Kontener
 {
     public string RodzajProduktu { get; }
     //temperatura w kontenerze
@@ -25,6 +25,8 @@ internal class KontenerChlodniczy : Kontener
         : base(masaLadunku, 240, 220, 290, "C")
     {
         MaksymalnaLadownosc = 20000;
+        if (masaLadunku > MaksymalnaLadownosc)
+            throw new OverfillException($"Przekroczono maksymalną ładowność kontenera chłodniczego");
         if (!MinimalneTemperatury.ContainsKey(rodzajProduktu))
             throw new ArgumentException($"Produkt '{rodzajProduktu}' nie jest obsługiwany.");
         double minimalnaTemperatura = MinimalneTemperatury[rodzajProduktu];
