@@ -24,7 +24,7 @@
                 Glebokosc = glebokosc;
             }
 
-            public virtual void Zaladuj(double masa)
+            public virtual void Zaladuj(double masa,string produkt)
             {
                 //sprawdzam czy masa całkowita nie przekroczy maksymalnej ładowności kontenera
                 if (MasaLadunku + masa > MaksymalnaLadownosc)

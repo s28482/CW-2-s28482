@@ -1,5 +1,5 @@
 
-    using ConsoleApp1;
+namespace ConsoleApp1;
 
     internal class KontenerNaPlyny : Kontener,IHazardNotifier
     {
@@ -18,7 +18,7 @@
             Console.WriteLine($"Uwaga {wiadomosc} (Kontener: {NumerSeryjny})");
         }
 
-        public override void Zaladuj(double masa)
+        public override void Zaladuj(double masa,string produkt)
         {
             // - Jeśli ładunek niebezpieczny -- max. 50% pojemności
             // - Jeśli ładunek zwykły -- max. 90% pojemności

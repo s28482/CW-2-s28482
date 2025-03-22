@@ -16,7 +16,7 @@ internal class KontenerNaGaz : Kontener,IHazardNotifier
         Console.WriteLine($"Uwaga {wiadomosc} (Kontener: {NumerSeryjny})");
     }
 
-    public override void Zaladuj(double masa)
+    public override void Zaladuj(double masa,string produkt)
     {
     
         if (MasaLadunku + masa > MaksymalnaLadownosc)
