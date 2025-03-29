@@ -2,6 +2,7 @@ namespace ConsoleApp1;
 public class KontenerChlodniczy : Kontener
 {
     public string RodzajProduktu { get; }
+    
     //temperatura w kontenerze
     public double Temperatura { get; private set; }
     
